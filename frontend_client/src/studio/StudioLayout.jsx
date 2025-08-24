@@ -7,10 +7,10 @@ import { AssetLibrary } from './panels/AssetLibrary';
 import { InspectorPanel } from './panels/InspectorPanel';
 import { PropertiesPanel } from './panels/PropertiesPanel';
 import { TimelineConsole } from './panels/TimelineConsole';
-import { NodeEditor } from './workspace/NodeEditor';
 import { AIAssistant } from './panels/AIAssistant';
 import { HumanCreator } from './panels/HumanCreator';
 import { MaterialEditor } from './panels/MaterialEditor';
+import { Viewport3D } from './workspace/Viewport3D';
 
 /**
  * StudioLayout renders the multi-panel dock-like layout for the editor.
@@ -43,10 +43,10 @@ export function StudioLayout() {
       </div>
       <div className="panel workspace">
         <div className="workspace-toolbar">
-          <span className="pill">Node Editor</span>
+          <span className="pill">Viewport 3D</span>
+          <button className="btn">Orbit</button>
+          <button className="btn">Pan</button>
           <button className="btn">Select</button>
-          <button className="btn">Move</button>
-          <button className="btn">Connect</button>
           <button className="btn">Simulate</button>
           <div style={{ flex: 1 }} />
           <select className="select" aria-label="Render mode">
@@ -59,7 +59,7 @@ export function StudioLayout() {
           </select>
         </div>
         <div className="workspace-canvas">
-          <NodeEditor />
+          <Viewport3D />
         </div>
       </div>
       <div className="panel sidebar-right">
